@@ -6,10 +6,11 @@
     <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.min.css' />
     
     <script type='text/javascript' src='/javascripts/closure/base.js'></script>
+    <script src="/socket.io/socket.io.js"></script>
     <script type='text/javascript' src='/javascripts/app.js'></script>
   </head>
   
-  <body onload='reader.App.init();'>
+  <body onload='reader.App.getInstance();'>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
   </body>

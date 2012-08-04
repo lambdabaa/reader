@@ -5,12 +5,12 @@
 
 var express = require('express')
   , http = require('http')
+  , io = require('socket.io')
   , path = require('path')
   , routes = require('./routes');
 
 var app = express();
-
-app.configure(function(){
+app.configure(function() {
   app.set('port', process.env.PORT || 3000);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'ejs');
@@ -24,12 +24,24 @@ app.configure(function(){
   app.use(express.static(path.join(__dirname, 'public')));
 });
 
-app.configure('development', function(){
+app.configure('development', function() {
   app.use(express.errorHandler());
 });
 
 app.get('/', routes.index);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
+});
+
+io.listen(server).sockets.on('connection', function(socket) {
+  console.log('Client ' + socket + ' connected!');
+  
+  socket.on('message', function(msg) {
+    console.log('Received message from ' + socket);
+    console.log(msg);
+  });
+  socket.on('disconnect', function() {
+    console.log('Client ' + socket + ' disconnected!');
+  });
 });
