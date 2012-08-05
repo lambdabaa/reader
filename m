@@ -24,10 +24,13 @@ puts 'Installing node modules...'
 `npm install`
 
 puts 'Cleaning up...'
+`mkdir -p public`
+`mkdir -p public/javascripts`
+`mkdir -p public/stylesheets`
 # TODO(gareth): Figure out why this yells about .svn
 begin
   FileUtils.cp_r(
-      "#{TMPDIR}/trunk/closure",
+      "#{TMPDIR}/trunk/closure/goog",
       'public/javascripts/closure')
 rescue
 end
