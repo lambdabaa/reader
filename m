@@ -8,7 +8,7 @@ TWITTER_BOOTSTRAP = 'http://twitter.github.com/bootstrap/assets/bootstrap.zip'
 TMPDIR = 'tmp'
 
 cwd = Dir.pwd
-Dir.mkdir_p TMPDIR
+FileUtils.mkdir_p TMPDIR
 Dir.chdir TMPDIR
 
 puts 'Downloading Google Closure library...'
