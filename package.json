@@ -9,9 +9,5 @@
     "ejs": "*",
     "express": "3.0.0rc2",
     "socket.io": "*"
-  },
-  "engines": {
-    "node": "0.6.x",
-    "npm": "1.1.x"
   }
 }
