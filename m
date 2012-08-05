@@ -8,7 +8,7 @@ TWITTER_BOOTSTRAP = 'http://twitter.github.com/bootstrap/assets/bootstrap.zip'
 TMPDIR = 'tmp'
 
 cwd = Dir.pwd
-Dir.mkdir TMPDIR
+Dir.mkdir_p TMPDIR
 Dir.chdir TMPDIR
 
 puts 'Downloading Google Closure library...'
@@ -23,9 +23,9 @@ puts 'Installing node modules...'
 `npm install`
 
 puts 'Cleaning up...'
-FileUtils.mkdir_p('public')
-FileUtils.mkdir_p('public/javascripts')
-FileUtils.mkdir_p('public/stylesheets')
+FileUtils.mkdir_p 'public'
+FileUtils.mkdir_p 'public/javascripts'
+FileUtils.mkdir_p 'public/stylesheets'
 # TODO(gareth): Figure out why this yells about .svn
 begin
   FileUtils.cp_r(
