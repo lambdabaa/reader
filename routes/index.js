@@ -3,6 +3,6 @@
  * GET home page.
  */
 
-exports.index = function(req, res) {
-  res.render('index', { title: 'Reader' });
+exports.index = function(req, resp) {
+  resp.render('index', { title: 'Reader' });
 };
