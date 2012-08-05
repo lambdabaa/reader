@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 # This needs to be run from the root reader directory
 
-require 'FileUtils'
+require 'fileutils'
 
 GOOGLE_CLOSURE_REPO = 'http://closure-library.googlecode.com/svn/trunk/'
 TWITTER_BOOTSTRAP = 'http://twitter.github.com/bootstrap/assets/bootstrap.zip'
