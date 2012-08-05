@@ -18,7 +18,7 @@ node app
 
 ## TODO
 
-1. Make articles get synced between the server and clients in realtime.
+1. Make bookmarks get synced between the server and clients in realtime.
 2. Build out the crawler to keep up realtime mirrors of the links and comments on
   * Delicious (?)
   * Digg (?)
