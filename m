@@ -15,8 +15,7 @@ puts 'Downloading Google Closure library...'
 `svn checkout #{GOOGLE_CLOSURE_REPO}`
 
 puts 'Downloading Twitter Bootstrap library...'
-`curl #{TWITTER_BOOTSTRAP} > bootstrap.zip`
-`unzip bootstrap.zip`
+`curl #{TWITTER_BOOTSTRAP} > bootstrap.zip && unzip bootstrap.zip`
 
 Dir.chdir cwd
 
@@ -24,9 +23,9 @@ puts 'Installing node modules...'
 `npm install`
 
 puts 'Cleaning up...'
-`mkdir -p public`
-`mkdir -p public/javascripts`
-`mkdir -p public/stylesheets`
+FileUtils.mkdir_p('public')
+FileUtils.mkdir_p('public/javascripts')
+FileUtils.mkdir_p('public/stylesheets')
 # TODO(gareth): Figure out why this yells about .svn
 begin
   FileUtils.cp_r(
@@ -40,6 +39,6 @@ FileUtils.cp(
 FileUtils.cp(
     "#{TMPDIR}/bootstrap/css/bootstrap-responsive.min.css",
     'public/stylesheets')
-`rm -rf #{TMPDIR}`
+FileUtils.rm_r(TMPDIR, :force => true)
 
 puts 'Done.'
