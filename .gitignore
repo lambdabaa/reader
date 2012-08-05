@@ -1,0 +1,4 @@
+node_modules
+public/javascripts/closure
+public/stylesheets/bootstrap.min.css
+public/stylesheets/bootstrap-responsive.min.css
