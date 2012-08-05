@@ -34,7 +34,8 @@ var server = http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
 });
 
-io.listen(server).sockets.on('connection', function(socket) {
+io = io.listen(server);
+io.sockets.on('connection', function(socket) {
   console.log('Client ' + socket + ' connected!');
   
   socket.on('message', function(msg) {
@@ -47,7 +48,7 @@ io.listen(server).sockets.on('connection', function(socket) {
 });
 
 // TODO(gareth): Turn this off when Heroku supports web sockets
-io.configure(function () { 
+io.configure(function() { 
   io.set('transports', ['xhr-polling']); 
   io.set('polling duration', 10); 
 });
