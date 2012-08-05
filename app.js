@@ -45,3 +45,9 @@ io.listen(server).sockets.on('connection', function(socket) {
     console.log('Client ' + socket + ' disconnected!');
   });
 });
+
+// TODO(gareth): Turn this off when Heroku supports web sockets
+io.configure(function () { 
+  io.set('transports', ['xhr-polling']); 
+  io.set('polling duration', 10); 
+});
