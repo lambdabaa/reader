@@ -37,6 +37,7 @@ io.listen(server).sockets.on('connection', function(socket) {
   console.log('Client ' + socket + ' connected!');
   
   // Send the base bookmarks over
+  // TODO(gareth): This is just a stub
   var bookmark = {
       'title': 'The Google Website',
       'url': 'http://www.google.com',

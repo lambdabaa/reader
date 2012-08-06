@@ -5,7 +5,7 @@
 To get started, run
 
 ```
-./m
+./make
 ```
 
 This script downloads 
