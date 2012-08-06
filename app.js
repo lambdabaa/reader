@@ -36,10 +36,27 @@ var server = http.createServer(app).listen(app.get('port'), function() {
 io.listen(server).sockets.on('connection', function(socket) {
   console.log('Client ' + socket + ' connected!');
   
-  socket.on('message', function(msg) {
-    console.log('Received message from ' + socket);
-    console.log(msg);
-  });
+  // Send the base bookmarks over
+  var bookmark = {
+      'title': 'The Google Website',
+      'url': 'http://www.google.com',
+      'author': 'Sergey Brin',
+      'source': 'reddit',
+      'created': 344209598,
+      'updated': 1344209598,
+      'comments': [
+          {
+              'body': 'The comment body',
+              'author': 'Gareth Aye'
+          },
+          {
+              'body': 'Yeah. LOLZOR.',
+              'author': 'Alison Holley'
+          }
+      ]
+  };
+  
+  socket.send(JSON.stringify([bookmark]));
   socket.on('disconnect', function() {
     console.log('Client ' + socket + ' disconnected!');
   });

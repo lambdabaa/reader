@@ -1,5 +1,7 @@
 goog.provide('reader.App');
 
+goog.require('goog.dom');
+
 /**
  * @constructor
  */
@@ -8,9 +10,15 @@ reader.App = function() {
   socket.on('connect', function() {
     console.log('Connected to socket.io server!');
   });
+  
   socket.on('message', function(msg) {
-    console.log('Received message from socket.io server:');
-    console.log(msg);
+    var bookmarks = JSON.parse(msg);
+    for (key in bookmarks) {
+      var bookmark = bookmarks[key];
+      console.log(bookmark);
+      // TODO(gareth): Why doesn't this work?
+      $("#bookmark-template").tmpl(bookmark).appendTo("#bookmarks");
+    }
   });
   
   /**

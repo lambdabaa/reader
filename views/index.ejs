@@ -2,16 +2,20 @@
 <html>
   <head>
     <title><%= title %></title>    
-    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
-    <link rel='stylesheet' href='/stylesheets/bootstrap-responsive.min.css' />
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+    <link rel="stylesheet" href="/stylesheets/bootstrap-responsive.min.css" />
     
-    <script type='text/javascript' src='/javascripts/closure/base.js'></script>
-    <script src="/socket.io/socket.io.js"></script>
-    <script type='text/javascript' src='/javascripts/app.js'></script>
+    <script type="text/javascript" src="/javascripts/closure/base.js"></script>
+    <script type ="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="/javascripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="/javascripts/app.js"></script>
+    <script id="bookmark-template" type="text/x-jquery-tmpl" src="/javascripts/templates/bookmark.js"></script>
   </head>
   
-  <body onload='reader.App.getInstance();'>
+  <body onload="reader.App.getInstance();">
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <ul id="bookmarks"></ul>
   </body>
 </html>

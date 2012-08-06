@@ -8,9 +8,15 @@ To get started, run
 ./m
 ```
 
-This script downloads the Google Closure, Twitter Bootstrap, and the node
-modules specified in package.json and puts everything in the right place.
-Afterwards, you should be able to run the express server on port 3000 with
+This script downloads 
+
+1. Google Closure
+2. JQuery Templates
+3. Twitter Bootstrap
+4. Node modules specified in package.json 
+
+and puts everything in the right place. Afterwards, you should be able to run
+the express server on port 3000 with
 
 ```
 node app
