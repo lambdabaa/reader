@@ -33,7 +33,8 @@ var server = http.createServer(app).listen(app.get('port'), function() {
   console.log("Express server listening on port " + app.get('port'));
 });
 
-io.listen(server).sockets.on('connection', function(socket) {
+io = io.listen(server);
+io.sockets.on('connection', function(socket) {
   console.log('Client ' + socket + ' connected!');
   
   // Send the base bookmarks over
@@ -75,4 +76,9 @@ io.listen(server).sockets.on('connection', function(socket) {
   };
   
   socket.send(JSON.stringify([bookmark1, bookmark2]));
+  
+  socket.on('message', function(msg) {
+    // TODO(gareth): Write to persistent stores
+    io.sockets.send(msg);
+  });
 });
