@@ -12,12 +12,9 @@ reader.App = function() {
   socket.on('message', function(msg) {
     var bookmarks = JSON.parse(msg);
     if (bookmarks) {
-      for (key in bookmarks) {
-        var bookmark = bookmarks[key];
-        $.get('/javascripts/templates/bookmark.html', function(template) {
-          $.tmpl(template, bookmark).appendTo('#bookmarks');
-        });
-      }
+      $.get('/javascripts/templates/bookmark.html', function(template) {
+        $.tmpl(template, bookmarks).appendTo('#bookmarks');
+      });
     }
   });
 

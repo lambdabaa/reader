@@ -37,8 +37,8 @@ io.listen(server).sockets.on('connection', function(socket) {
   console.log('Client ' + socket + ' connected!');
   
   // Send the base bookmarks over
-  // TODO(gareth): This is just a stub
-  var bookmark = {
+  // TODO(gareth): These are just stubs
+  var bookmark1 = {
       'title': 'The Google Website',
       'url': 'http://www.google.com',
       'author': 'Sergey Brin',
@@ -57,7 +57,26 @@ io.listen(server).sockets.on('connection', function(socket) {
       ]
   };
   
-  socket.send(JSON.stringify([bookmark]));
+  var bookmark2 = {
+      'title': 'Yahoo is a Company Run by Premium Execs',
+      'url': 'http://www.yahoo.com',
+      'author': 'Marissa Mayer',
+      'source': 'HackerNews',
+      'created': 1344209599,
+      'updated': 1344209599,
+      'comments': [
+          {
+              'body': 'The comment body',
+              'author': 'Gareth Aye'
+          },
+          {
+              'body': 'Yeah. LOLZOR.',
+              'author': 'Alison Holley'
+          }
+      ]
+  };
+  
+  socket.send(JSON.stringify([bookmark1, bookmark2]));
   socket.on('disconnect', function() {
     console.log('Client ' + socket + ' disconnected!');
   });
