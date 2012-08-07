@@ -32,10 +32,13 @@ puts 'Installing node modules...'
 
 puts 'Cleaning up...'
 FileUtils.mkdir_p 'public'
+FileUtils.mkdir_p 'public/images'
+FileUtils.mkdir_p 'public/images/third_party'
 FileUtils.mkdir_p 'public/javascripts'
 FileUtils.mkdir_p 'public/javascripts/third_party'
 FileUtils.mkdir_p 'public/stylesheets'
 FileUtils.mkdir_p 'public/stylesheets/third_party'
+
 
 # TODO(gareth): Figure out why this yells about .svn
 begin
@@ -55,13 +58,9 @@ FileUtils.cp(
     "#{TMPDIR}/less-1.3.0.min.js",
     'public/javascripts/third_party/less')
 
-FileUtils.mkdir_p 'public/stylesheets/third_party/bootstrap'
-FileUtils.cp(
-    "#{TMPDIR}/bootstrap/css/bootstrap.min.css",
-    'public/stylesheets/third_party/bootstrap')
-FileUtils.cp(
-    "#{TMPDIR}/bootstrap/css/bootstrap-responsive.min.css",
-    'public/stylesheets/third_party/bootstrap')
+FileUtils.mkdir_p 'public/bootstrap'
+FileUtils.cp_r("#{TMPDIR}/bootstrap", 'public/bootstrap')
+
 FileUtils.rm_r TMPDIR, :force => true
 
 puts 'Done.'

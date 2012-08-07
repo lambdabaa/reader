@@ -6,7 +6,10 @@ puts 'Uninstalling node modules...'
 FileUtils.rm_r 'node_modules', :force => true
 
 puts 'Removing third party libraries...'
+FileUtils.rm_r 'public/bootstrap', :force => true
+FileUtils.rm_r 'public/images/third_party', :force => true
 FileUtils.rm_r 'public/javascripts/third_party', :force => true
 FileUtils.rm_r 'public/stylesheets/third_party', :force => true
+
 
 puts 'Done.'

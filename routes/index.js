@@ -3,5 +3,5 @@
  */
 
 exports.index = function(req, resp) {
-  resp.render('index', { title: 'Reader' });
+  resp.render('index', { title: 'Readily' });
 };

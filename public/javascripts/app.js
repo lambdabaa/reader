@@ -13,6 +13,7 @@ reader.App = function() {
     var bookmarks = JSON.parse(msg);
     if (bookmarks) {
       $.get('/javascripts/templates/bookmark.html', function(template) {
+        // TODO(gareth): Animate fade in
         $.tmpl(template, bookmarks).appendTo('#bookmarks');
       });
     }

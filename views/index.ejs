@@ -2,8 +2,7 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel="stylesheet" href="/stylesheets/third_party/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="/stylesheets/third_party/bootstrap/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet/less" type="text/css" href="/stylesheets/index.less">
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -14,6 +13,26 @@
   </head>
   
   <body onload="reader.App.getInstance();">
-    <ul id="bookmarks"></ul>
+    <div id="top-container">Readily</div>
+    
+    <ul id="bookmarks">
+    </ul>
+    
+    <form id="share">
+      <label>Title</label>
+      <input type="text" class="span3" placeholder="Share something..." />
+      <i class="icon-share"></i>
+      
+      <label>URL</label>
+      <input type="text" class="span3" placeholder="Link to it!" />
+      <i class="icon-leaf"></i>
+      
+      <label>Author</label>
+      <input type="text" class="span3" placeholder="Who are you?" />
+      <i class="icon-user"></i>
+      
+      <br />
+      <button type="submit" class="btn">Submit</button>
+    </form>
   </body>
 </html>

@@ -1,3 +1,56 @@
-ul {
-  list-style-type: none;
+@import "util.less";
+
+body {
+  background-color: @twitter;
+  
+  #top-container {
+    height: 100px;
+    border-bottom: 1px solid black;
+    line-height: 100px;
+    text-align: center;
+    font-family: cursive;
+    font-size: 36px;
+    color: @facebook;
+  }
+
+  #bookmarks {
+    float: left;
+    padding: 20px;
+    list-style-type: none;
+    
+    .bookmark {
+      .rounded();
+      .shadow(2px 2px 0px 0px gray);
+      
+      height: 50px;
+      width: 600px;
+      margin-bottom: 10px;
+      padding: 10px;
+      
+      background-color: white;
+      font-size: 16px;
+      font-family: helvetica, sans-serif;
+    }
+    
+    .bookmark:hover {
+      .hand();
+      background-color: @highlight;
+    }
+    
+    .bookmark:active {
+      // TODO(gareth): This could look more like a depressed button
+      .shadow(1px 1px 0px 0px gray);
+    }
+  }
+  
+  #share {
+    float:left;
+    margin-top: 20px;
+    padding: 20px;
+    
+    .rounded();
+    .shadow(2px 2px 0px 0px gray);
+    
+    background-color: white;
+  }
 }
