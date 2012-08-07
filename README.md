@@ -23,6 +23,12 @@ the express server on port 3000 with
 node app
 ```
 
+If you want to start from scratch and undo the work of the make script, there's also
+
+```
+./clean
+```
+
 ## TODO
 
 1. Make bookmarks get synced between the server and clients in realtime.
