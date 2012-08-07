@@ -12,8 +12,9 @@ This script downloads
 
 1. Google Closure
 2. JQuery Templates
-3. Twitter Bootstrap
-4. Node modules specified in package.json 
+3. less.js
+4. Twitter Bootstrap
+5. Node modules specified in package.json 
 
 and puts everything in the right place. Afterwards, you should be able to run
 the express server on port 3000 with
