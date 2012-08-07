@@ -42,7 +42,6 @@ io.listen(server).sockets.on('connection', function(socket) {
       'title': 'The Google Website',
       'url': 'http://www.google.com',
       'author': 'Sergey Brin',
-      'source': 'reddit',
       'created': 344209598,
       'updated': 1344209598,
       'comments': [
@@ -61,7 +60,6 @@ io.listen(server).sockets.on('connection', function(socket) {
       'title': 'Yahoo is a Company Run by Premium Execs',
       'url': 'http://www.yahoo.com',
       'author': 'Marissa Mayer',
-      'source': 'HackerNews',
       'created': 1344209599,
       'updated': 1344209599,
       'comments': [
@@ -77,7 +75,4 @@ io.listen(server).sockets.on('connection', function(socket) {
   };
   
   socket.send(JSON.stringify([bookmark1, bookmark2]));
-  socket.on('disconnect', function() {
-    console.log('Client ' + socket + ' disconnected!');
-  });
 });
