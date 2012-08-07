@@ -29,23 +29,30 @@ puts 'Installing node modules...'
 puts 'Cleaning up...'
 FileUtils.mkdir_p 'public'
 FileUtils.mkdir_p 'public/javascripts'
+FileUtils.mkdir_p 'public/javascripts/third_party'
 FileUtils.mkdir_p 'public/stylesheets'
+FileUtils.mkdir_p 'public/stylesheets/third_party'
+
 # TODO(gareth): Figure out why this yells about .svn
 begin
   FileUtils.cp_r(
       "#{TMPDIR}/trunk/closure/goog",
-      'public/javascripts/closure')
+      'public/javascripts/third_party/closure')
 rescue
 end
+
+FileUtils.mkdir_p 'public/javascripts/third_party/jquery'
 FileUtils.cp(
     "#{TMPDIR}/jquery.tmpl.min.js",
-    'public/javascripts')
+    'public/javascripts/third_party/jquery')
+
+FileUtils.mkdir_p 'public/stylesheets/third_party/bootstrap'
 FileUtils.cp(
     "#{TMPDIR}/bootstrap/css/bootstrap.min.css",
-    'public/stylesheets')
+    'public/stylesheets/third_party/bootstrap')
 FileUtils.cp(
     "#{TMPDIR}/bootstrap/css/bootstrap-responsive.min.css",
-    'public/stylesheets')
+    'public/stylesheets/third_party/bootstrap')
 FileUtils.rm_r TMPDIR, :force => true
 
 puts 'Done.'

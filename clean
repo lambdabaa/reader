@@ -6,9 +6,7 @@ puts 'Uninstalling node modules...'
 FileUtils.rm_r 'node_modules', :force => true
 
 puts 'Removing third party libraries...'
-FileUtils.rm_r 'public/javascripts/closure', :force => true
-FileUtils.rm 'public/javascripts/jquery.tmpl.min.js', :force => true
-FileUtils.rm 'public/stylesheets/bootstrap.min.css', :force => true
-FileUtils.rm 'public/stylesheets/bootstrap-responsive.min.css', :force => true
+FileUtils.rm_r 'public/javascripts/third_party', :force => true
+FileUtils.rm_r 'public/stylesheets/third_party', :force => true
 
 puts 'Done.'

@@ -1,4 +1,3 @@
 node_modules
-public/javascripts/closure
-public/stylesheets/bootstrap.min.css
-public/stylesheets/bootstrap-responsive.min.css
+public/javascripts/third_party
+public/stylesheets/third_party
